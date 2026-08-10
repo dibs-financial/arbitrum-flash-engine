@@ -1,0 +1,9 @@
+packages:
+  - 'apps/*'
+  - 'packages/*'
+  - 'tooling/*'
+  - 'contracts'
+  - 'offchain-engine'
+
+preferred-versions:
+  typescript: ^5.3.0

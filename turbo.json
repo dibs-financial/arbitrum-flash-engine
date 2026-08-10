@@ -1,0 +1,44 @@
+{
+  "$schema": "https://turbo.build/json-schema.json",
+  "globalDependencies": [
+    "package.json",
+    "tsconfig.json",
+    ".eslintrc.json",
+    "prettier.config.js"
+  ],
+  "tasks": {
+    "build": {
+      "description": "Build application or library",
+      "dependsOn": ["^build"],
+      "outputs": ["{projectRoot}/dist/**", "{projectRoot}/.next/**"],
+      "cache": true
+    },
+    "dev": {
+      "description": "Start dev server",
+      "cache": false,
+      "persistent": true
+    },
+    "test": {
+      "description": "Run tests",
+      "outputs": ["{projectRoot}/coverage/**"],
+      "cache": true
+    },
+    "lint": {
+      "description": "Lint codebase",
+      "outputs": ["{projectRoot}/.eslint-cache"],
+      "cache": true
+    },
+    "type-check": {
+      "description": "Type check TypeScript",
+      "cache": true
+    },
+    "format": {
+      "description": "Format code with Prettier",
+      "cache": false
+    },
+    "clean": {
+      "description": "Remove build artifacts",
+      "cache": false
+    }
+  }
+}
